@@ -2,8 +2,9 @@ const pricing = {
   MultiFinish: 12.50,
   Bonding: 10.80,
   Hardwall: 11.20
+}; // Fixed missing brace here
+
 let extras = [];
-};
 
 const state = {
   jobs: JSON.parse(localStorage.getItem("jobs") || "[]"),
@@ -19,29 +20,27 @@ function save() {
   localStorage.setItem("settings", JSON.stringify(state.settings));
 }
 
-document.getElementById("todayDate").innerText =
-  new Date().toDateString();
+document.getElementById("todayDate").innerText = new Date().toDateString();
 
-function login() {
-  // Bypassing password logic
-  document.getElementById("login-screen").classList.add("hidden");
-  document.getElementById("app").classList.remove("hidden");
-  navigate("dashboard");
-}
+// Initialize the app directly
+navigate("dashboard");
 
 function navigate(screen) {
-
   document.querySelectorAll(".screen").forEach(s => s.classList.add("hidden"));
   document.getElementById(`${screen}-screen`).classList.remove("hidden");
 
   document.querySelectorAll(".bottom-nav button").forEach(b => b.classList.remove("active"));
-  event?.target?.classList?.add("active");
+  // Use currentTarget to ensure we catch the button if icons are clicked
+  if (event) event.currentTarget?.classList?.add("active");
 
   if (screen === "dashboard") renderDashboard();
   if (screen === "jobs") renderJobs();
   if (screen === "quotes") renderQuotes();
   if (screen === "invoices") renderInvoices();
   if (screen === "settings") renderSettings();
+}
+
+// ... remove the old login() function entirely ...
 }
 
 function generateQuoteNumber() {
