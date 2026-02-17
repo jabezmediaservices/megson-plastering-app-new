@@ -22,21 +22,6 @@ function save() {
 document.getElementById("todayDate").innerText =
   new Date().toDateString();
 
-function login() {
-  const pass = document.getElementById("passwordInput").value;
-  const saved = localStorage.getItem("appPassword");
-
-  if (!saved) {
-    localStorage.setItem("appPassword", pass);
-    alert("Password Set");
-  } else if (pass !== saved) {
-    alert("Incorrect Password");
-    return;
-  }
-
-  document.getElementById("login-screen").classList.add("hidden");
-  document.getElementById("app").classList.remove("hidden");
-  navigate("dashboard");
 }
 
 function navigate(screen) {
