@@ -6,11 +6,10 @@
 <title>Megson Plastering</title>
 <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<div id="app"> <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-  <header>
+<div id="app"> <header>
     <h1>Megson Plastering</h1>
     <p id="todayDate"></p>
   </header>
@@ -27,9 +26,11 @@
     <button onclick="navigate('dashboard')">🏠<span>Home</span></button>
     <button onclick="navigate('jobs')">🛠<span>Jobs</span></button>
     <button onclick="navigate('quotes')">📄<span>Quotes</span></button>
-    <button onclick="navigate('invoices')">💰<span>Invoices</span></button>
-    <button onclick="navigate('settings')">⚙️<span>Settings</span></button>
+    <button onclick="navigate('invoices')">💷<span>Invoices</span></button>
+    <button onclick="navigate('settings')">⚙<span>Settings</span></button>
   </nav>
+
+  <button class="fab" onclick="openAddJob()">+</button>
 </div>
 
 <script src="app.js"></script>
