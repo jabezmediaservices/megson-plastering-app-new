@@ -23,17 +23,7 @@ document.getElementById("todayDate").innerText =
   new Date().toDateString();
 
 function login() {
-  const pass = document.getElementById("passwordInput").value;
-  const saved = localStorage.getItem("appPassword");
-
-  if (!saved) {
-    localStorage.setItem("appPassword", pass);
-    alert("Password Set");
-  } else if (pass !== saved) {
-    alert("Incorrect Password");
-    return;
-  }
-
+  // Bypassing password logic
   document.getElementById("login-screen").classList.add("hidden");
   document.getElementById("app").classList.remove("hidden");
   navigate("dashboard");
@@ -670,3 +660,6 @@ async function downloadInvoicePDF(jobIndex) {
 
   doc.save(`${job.invoice.invoiceNumber}.pdf`);
 }
+
+// Automatically enter the app when the script loads
+login();
