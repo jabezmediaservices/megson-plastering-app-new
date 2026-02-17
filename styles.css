@@ -1,0 +1,170 @@
+:root {
+  --primary:#132257;
+  --primary-light:#1f3c88;
+  --bg:#f4f6f9;
+  --card:#ffffff;
+  --text:#1c1c1c;
+  --sub:#6b7280;
+  --accent:#f28c28;
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+body {
+  background:var(--bg);
+  color:var(--text);
+  max-width:480px;
+  margin:auto;
+}
+
+header {
+  background:var(--primary);
+  color:white;
+  padding:20px;
+}
+
+header h1 { font-size:20px; }
+header p { font-size:12px; opacity:.8; }
+
+main {
+  padding:16px;
+  padding-bottom:100px;
+}
+
+.screen { animation:fade .2s ease; }
+.hidden { display:none; }
+
+@keyframes fade {
+  from { opacity:0; transform:translateY(10px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.card {
+  background:var(--card);
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.06);
+  margin-bottom:16px;
+}
+
+.card h3 {
+  margin-bottom:12px;
+}
+
+button {
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:var(--primary-light);
+  color:white;
+  font-weight:600;
+  width:100%;
+  margin-top:8px;
+}
+
+button.primary {
+  background:var(--accent);
+}
+
+input, select, textarea {
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  width:100%;
+  margin-top:8px;
+  margin-bottom:12px;
+}
+
+.bottom-nav {
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  max-width:480px;
+  margin:auto;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  border-top:1px solid #ddd;
+}
+
+.bottom-nav button {
+  background:none;
+  color:var(--sub);
+  font-size:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:auto;
+  margin:0;
+}
+
+.bottom-nav button.active {
+  color:var(--primary);
+  font-weight:600;
+}
+
+.fab {
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:var(--accent);
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  font-size:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+.login-screen {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.login-card {
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  width:90%;
+}
+.job-item {
+  padding:14px;
+  border-bottom:1px solid #eee;
+}
+
+.job-item:last-child {
+  border-bottom:none;
+}
+
+.status {
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:12px;
+  margin-top:6px;
+}
+
+.status.Scheduled { background:#e3e6eb; }
+.status["In Progress"] { background:#dbeafe; }
+.status.Complete { background:#dcfce7; }
+.status.Invoiced { background:#fef3c7; }
+.status.Paid { background:#bbf7d0; }
+
+.link-btn {
+  background:none;
+  color:var(--primary);
+  padding:6px 0;
+  margin:4px 0;
+}
