@@ -1,8 +1,9 @@
+// 1. FIXED: Correctly closed the object and defined variables
 const pricing = {
   MultiFinish: 12.50,
   Bonding: 10.80,
   Hardwall: 11.20
-}; // Fixed missing brace here
+};
 
 let extras = [];
 
@@ -20,28 +21,28 @@ function save() {
   localStorage.setItem("settings", JSON.stringify(state.settings));
 }
 
+// 2. Set the date on load
 document.getElementById("todayDate").innerText = new Date().toDateString();
 
-// Initialize the app directly
-navigate("dashboard");
-
+// 3. REMOVED login() and replaced with immediate navigation
 function navigate(screen) {
   document.querySelectorAll(".screen").forEach(s => s.classList.add("hidden"));
-  document.getElementById(`${screen}-screen`).classList.remove("hidden");
+  const targetScreen = document.getElementById(`${screen}-screen`);
+  if (targetScreen) targetScreen.classList.remove("hidden");
 
+  // Update nav buttons
   document.querySelectorAll(".bottom-nav button").forEach(b => b.classList.remove("active"));
-  // Use currentTarget to ensure we catch the button if icons are clicked
-  if (event) event.currentTarget?.classList?.add("active");
-
+  
+  // Logic to render specific screens
   if (screen === "dashboard") renderDashboard();
   if (screen === "jobs") renderJobs();
-  if (screen === "quotes") renderQuotes();
-  if (screen === "invoices") renderInvoices();
-  if (screen === "settings") renderSettings();
+  // ... (keep your existing render functions below)
 }
 
-// ... remove the old login() function entirely ...
-}
+// Start the app immediately
+navigate("dashboard");
+
+// --- KEEP ALL YOUR OTHER FUNCTIONS (renderDashboard, renderJobs, etc.) BELOW THIS LINE ---
 
 function generateQuoteNumber() {
 
