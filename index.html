@@ -5,39 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Megson Plastering</title>
 <link rel="stylesheet" href="styles.css">
-<link rel="manifest" href="manifest.json">
 </head>
-
 <body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div id="app"> <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+  <header>
+    <h1>Megson Plastering</h1>
+    <p id="todayDate"></p>
+  </header>
 
-<header>
-  <h1>Megson Plastering</h1>
-  <p id="todayDate"></p>
-</header>
+  <main>
+    <section id="dashboard-screen" class="screen"></section>
+    <section id="jobs-screen" class="screen hidden"></section>
+    <section id="quotes-screen" class="screen hidden"></section>
+    <section id="invoices-screen" class="screen hidden"></section>
+    <section id="settings-screen" class="screen hidden"></section>
+  </main>
 
-<main>
-
-  <section id="dashboard-screen" class="screen"></section>
-  <section id="jobs-screen" class="screen hidden"></section>
-  <section id="quotes-screen" class="screen hidden"></section>
-  <section id="invoices-screen" class="screen hidden"></section>
-  <section id="settings-screen" class="screen hidden"></section>
-
-</main>
-
-<nav class="bottom-nav">
-  <button onclick="navigate('dashboard')">🏠<span>Home</span></button>
-  <button onclick="navigate('jobs')">🛠<span>Jobs</span></button>
-  <button onclick="navigate('quotes')">📄<span>Quotes</span></button>
-  <button onclick="navigate('invoices')">💷<span>Invoices</span></button>
-  <button onclick="navigate('settings')">⚙<span>Settings</span></button>
-</nav>
-
-<button class="fab" onclick="openAddJob()">+</button>
-
+  <nav class="bottom-nav">
+    <button onclick="navigate('dashboard')">🏠<span>Home</span></button>
+    <button onclick="navigate('jobs')">🛠<span>Jobs</span></button>
+    <button onclick="navigate('quotes')">📄<span>Quotes</span></button>
+    <button onclick="navigate('invoices')">💰<span>Invoices</span></button>
+    <button onclick="navigate('settings')">⚙️<span>Settings</span></button>
+  </nav>
 </div>
 
 <script src="app.js"></script>
